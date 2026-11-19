@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/mongolia-law",
+  "title": "Mongolia Law",
+  "description": "Mongolia legislation -- search the laws and other legal acts of Mongolia and read one law or one…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/mongolia-law",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-mongolia-law",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/mongolia-law/mcp"
+    }
+  ]
+}

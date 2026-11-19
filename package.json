@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-mongolia-law",
+  "version": "0.1.0",
+  "description": "Mongolia legislation -- search the laws and other legal acts of Mongolia and read one law or one article of it, from the Unified Legal Information System (Эрх зүйн мэдээллийн нэгдсэн систем), run by the Ministry of Justice and Home Affairs of Mongolia.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-mongolia-law": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "mongolia-law"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-mongolia-law.git"
+  },
+  "mcpName": "io.github.pipeworx-io/mongolia-law",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "mongolia-law",
+    "gatewaySlug": "mongolia-law",
+    "sourceHash": "v1-f9f1c9bc6be196e4a927caa070afbc8fe68bea390616a8ceabacf58af4e23e6e",
+    "sourceCommit": "afcaf44429ea5fe1396ff1733e1b8651aeefcde8"
+  }
+}

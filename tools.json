@@ -1,0 +1,50 @@
+[
+  {
+    "name": "mn_law_search",
+    "description": "Search the laws and other legal acts of Mongolia in the official Unified Legal Information System (Ministry of Justice and Home Affairs) by words in the title, in Mongolian Cyrillic (e.g. \"Хөдөлмөрийн тухай\" for the Labour Law, \"Эрүүгийн хууль\"). Optional category: law, constitution, treaty, presidential_decree, parliament_resolution, government_resolution, ministerial_order and others. Returns law_id, title, category, approval and effective dates and a snippet; lists only acts the register marks valid. Use law_id with mn_law_get.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Words from the act title in Mongolian, e.g. \"Хөдөлмөрийн тухай\"."
+        },
+        "category": {
+          "type": "string",
+          "description": "Kind of act: law, constitution, treaty, presidential_decree, parliament_resolution, government_resolution, constitutional_court, supreme_court, ministerial_order, agency_order, local_council, local_governor. Empty for all."
+        },
+        "match": {
+          "type": "string",
+          "description": "\"all\" (default): every word must be in the title; \"any\": at least one."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max results (default 20, max 100)."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "mn_law_get",
+    "description": "Read a Mongolian law or legal act from the official Unified Legal Information System: title, type, adoption date, status as the register states it (null when it does not) and the list of articles; with article (e.g. \"5\"), the Mongolian text of that article (зүйл). Give law_id from mn_law_search.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "law_id": {
+          "type": "string",
+          "description": "law_id from mn_law_search, e.g. \"16230709635751\" (Labour Law 2021)."
+        },
+        "article": {
+          "type": "string",
+          "description": "Article number, e.g. \"5\". Omit for the article list."
+        }
+      },
+      "required": [
+        "law_id"
+      ]
+    }
+  }
+]
